@@ -1,0 +1,8 @@
+{
+  "name": "ionic-postsboard-app",
+  "app_id": "aefaa108",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
