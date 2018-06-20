@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar [color]="'primary'">
     <ion-title>
-      Ionic Blank
+      Posts Board Application
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-item (click)="addNote()">
+    <ion-icon ios="ios-add-circle" md="md-add-circle" item-start></ion-icon>
+    Add new note
+  </button>
+  <ion-card *ngFor="let note of notes">
+
+    <ion-card-header>
+      <ion-item>
+        <ion-thumbnail item-start *ngIf="note.image">
+          <img [src]="note.image">
+        </ion-thumbnail>
+        <h2>{{note.author}}</h2>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      {{note.description}}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
